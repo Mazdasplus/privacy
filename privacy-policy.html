@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThePlusInspect — Privacy Policy</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      padding: 48px 24px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    header { margin-bottom: 40px; border-bottom: 2px solid #000; padding-bottom: 24px; }
+    header h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
+    header p  { font-size: 14px; color: #555; }
+    h2 {
+      font-size: 17px; font-weight: 700; margin-top: 36px; margin-bottom: 10px;
+      padding-bottom: 6px; border-bottom: 1px solid #eee;
+    }
+    p  { font-size: 15px; margin-bottom: 14px; color: #333; }
+    ul { margin: 0 0 14px 24px; }
+    li { font-size: 15px; color: #333; margin-bottom: 6px; }
+    a  { color: #000; }
+    .effective { font-size: 13px; color: #888; margin-top: 6px; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #eee; font-size: 13px; color: #888; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ThePlusInspect — Privacy Policy</h1>
+  <p>Developed and operated by <strong>Mazda's Plus LLC</strong> — Modesto, CA</p>
+  <p class="effective">Effective date: May 27, 2026</p>
+</header>
+
+<p>
+  ThePlusInspect is a Chrome extension built for internal use by Mazda's Plus LLC service
+  advisors. It helps annotate automotive inspection photos and upload them directly into
+  the Tekmetric shop management system. This policy explains what data the extension
+  accesses, how it is used, and who it is shared with.
+</p>
+
+<h2>1. Data We Access</h2>
+<p>The extension accesses the following information while in use:</p>
+<ul>
+  <li><strong>Inspection photos</strong> — photos attached to repair orders in Tekmetric are
+      loaded into the extension editor for annotation. These photos are sourced from
+      Tekmetric's own servers and are not copied or stored outside of the extension's
+      local processing.</li>
+  <li><strong>Repair order information</strong> — the current Tekmetric page URL and
+      inspection data (item names, technician ratings, and notes) are read to provide
+      context for AI annotation.</li>
+  <li><strong>Extension settings</strong> — the user's Anthropic API key and shop name
+      are stored locally in Chrome's extension storage.</li>
+</ul>
+
+<h2>2. Data We Store</h2>
+<ul>
+  <li><strong>API key and shop name</strong> (chrome.storage.sync) — stored locally in
+      the user's Chrome profile so settings persist across sessions. This data never
+      leaves the user's device except to sync across the user's own Chrome profiles
+      via Google's encrypted sync.</li>
+  <li><strong>Learned arrow positions</strong> (chrome.storage.local) — the extension
+      records where arrows were placed on past annotations for specific inspection items
+      (e.g., "Serpentine Belt") to improve future AI suggestions. This data is stored
+      entirely on the local device and is never transmitted anywhere.</li>
+</ul>
+<p>We do <strong>not</strong> store inspection photos, customer information, vehicle data,
+or any personally identifiable information on any external server.</p>
+
+<h2>3. Data Sent to Third Parties</h2>
+<p>
+  When a user requests AI annotation or a customer description, the inspection photo
+  (as a base64-encoded image) and the associated technician notes are sent to the
+  <strong>Anthropic API</strong> (<code>api.anthropic.com</code>) for analysis. This
+  request is made using the API key entered by the user in the extension settings —
+  the user controls and owns that API account.
+</p>
+<p>
+  Anthropic's data handling is governed by their own
+  <a href="https://www.anthropic.com/privacy" target="_blank">Privacy Policy</a>.
+  Photo data sent to the Anthropic API is used only to generate the annotation and
+  description response and is subject to Anthropic's data retention policies.
+</p>
+<p>
+  <strong>No other third parties receive any data.</strong> The extension does not
+  include analytics, advertising, or tracking of any kind.
+</p>
+
+<h2>4. Data We Do Not Collect</h2>
+<ul>
+  <li>We do not collect customer names, contact information, or personal data.</li>
+  <li>We do not track usage, page views, or user behavior.</li>
+  <li>We do not sell, rent, or share any data with advertisers or data brokers.</li>
+  <li>We do not transmit inspection photos to any server other than the Anthropic API
+      at the user's explicit request.</li>
+</ul>
+
+<h2>5. Permissions Used</h2>
+<ul>
+  <li><strong>activeTab</strong> — reads the current Tekmetric page URL to identify
+      the repair order and shop in context.</li>
+  <li><strong>tabs</strong> — used to notify open Tekmetric tabs when an extension
+      update is available.</li>
+  <li><strong>storage</strong> — stores API key, shop name, and learned arrow positions
+      locally on the device.</li>
+  <li><strong>Host access (tekmetric.com, amazonaws.com, anthropic.com)</strong> —
+      required to inject the annotation panel into Tekmetric, fetch inspection photos
+      from Tekmetric's photo storage, and send photos to the Anthropic API.</li>
+</ul>
+
+<h2>6. Data Security</h2>
+<p>
+  All communication with the Anthropic API uses HTTPS encryption. The extension does
+  not operate any servers and stores no data outside of the user's own device and
+  Chrome profile. The API key is stored using Chrome's built-in encrypted storage.
+</p>
+
+<h2>7. Who Can Use This Extension</h2>
+<p>
+  ThePlusInspect is an internal tool developed for use by employees and authorized
+  staff of Mazda's Plus LLC. It is not intended for use by the general public. By
+  installing this extension, users agree to use it only for its intended purpose of
+  annotating automotive inspection photos within Tekmetric.
+</p>
+
+<h2>8. Changes to This Policy</h2>
+<p>
+  We may update this privacy policy from time to time. Any changes will be reflected
+  by an updated effective date at the top of this page.
+</p>
+
+<h2>9. Contact</h2>
+<p>
+  If you have questions about this privacy policy or how your data is handled,
+  contact us at:<br>
+  <strong>Mazda's Plus LLC</strong><br>
+  Modesto, California<br>
+  <a href="mailto:scott@mazdasplus.com">scott@mazdasplus.com</a>
+</p>
+
+<footer>
+  &copy; 2026 Mazda's Plus LLC. ThePlusInspect is an internal tool and is not
+  affiliated with Anthropic or Tekmetric.
+</footer>
+
+</body>
+</html>
